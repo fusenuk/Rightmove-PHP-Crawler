@@ -1,4 +1,4 @@
-# Rightmove-PHP-Crawler
+# Rightmove-PHP-Crawler - Rightmove PHP Scraper / Crawler -
 PHP class to scrape / crawl rightmove.co.uk
 
 Data is always returned in arrays.

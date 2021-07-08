@@ -13,9 +13,9 @@ You can limit the number of returned properties by setting a maximum crawl numbe
 
 Rightmove returns 24 properties per page request, so setting 100 would mean 5 page requests are made and then the script would stop any further requests.
 
-You then need to call the `crawl()` method which tells is when the class will make the cURL requests to scrape/crawl the content.
+You then need to call the `crawl()` method which is when the class will make the cURL requests to scrape/crawl the content.
 ## Returned property attributes
-The class uses pre-set defaults for what type of scrape it will do and how it will sort the properties and the property attributes it will return.
+The class uses pre-set defaults for what type of scrape it will do, how it will sort the properties, and the property attributes it will return.
 
 The property attributes returned by default are - 
 
@@ -38,21 +38,21 @@ The property attributes returned by default are -
     'addedOrReduced',
     'propertyTypeFullDescription'
     
-You can add extra property IDs you want returned by calling `addPropertyAttribute('attributeName');` before using the `crawl()` method.
+You can add extra property attributes you want returned by calling `addPropertyAttribute('attributeName');` before using the `crawl()` method.
 
 You can use the `showAllAttributes()` method to get an array list of all the property attributes Rightmove has available after doing the crawl.
 ## Modifying the search
-To modify the search, you use the method `modifySearch()` before doing calling crawl()
+To modify the search, you use the method `modifySearch()` before calling `crawl()`
 
 The possible search modifiers you can use are -
 
     modifySearch('locationIdentifier', '*value*');
 
-*Value* is the location you want to search. You would only set this if want to do multiple calls to the crawl() method but want to alter where you're searching.
+*Value* is the location you want to search. You would only set this if you want to do multiple calls to the `crawl()` method but want to alter where you're searching.
 
     modifySearch('radius', *value*);
 
-*value* can be *'0.0', '0.25', '0.5', '1', '3', '5', '10', '15', '20', '30', '50'* - these are miles from the location you are searching
+*value* can be *'0.0', '0.25', '0.5', '1', '3', '5', '10', '15', '20', '30', '50'* - these are miles to search from the location you are searching
 
     modifySearch('sortType', '*value*');
 
@@ -83,10 +83,10 @@ By default, along with the general array containing the details of the propertie
     'price>amount',
     'listingUpdate>listingUpdateReason',
     
-Using the `getFilteredProperties()` method you will see 4 arrays of properties where the properties are in multidimensional arrays ordered by the value of the filter attribute. An Example would be `$properties['bedrooms']['4']` would contain all properties that have 4 bedrooms. Or `$properties['propertySubtype']['flat']` would containing all properties that are 'Flats'. A final example would be `$properties['amount']['400000']` containing all properties that have a price set at £400,000.
+Using the `getFilteredProperties()` method you will see 4 arrays of properties where the properties are in multidimensional arrays ordered by the value of the filter attribute. An Example would be `$properties['bedrooms']['4']` would contain all properties that have 4 bedrooms. Or `$properties['propertySubtype']['flat']` would containing all properties that are 'Flats'. A final example would be `$properties['amount']['400000']` containing all properties that have a price set at Â£400,000.
 
-You can add extra filters to create additional multi-dimentional arrays by editing the $this->filters array in the class.
+You can add extra filters to create additional multi-dimentional arrays by editing the `$this->filters` array in the class.
     
 ## Speed of crawling
 
-I think you should attempt to not hammer public websites when crawling them, so the class uses the setting `$this->curlSleep = 0.6;` to force a 0.6 second `sleep()` between every cURL request. If you think differently, you can edit that value to speeden up or slow down the scripts response time.
+I think you should attempt to not hammer public websites when crawling them, so the class uses the setting `$this->curlSleep = 0.6;` to force a 0.6 second `sleep()` between every cURL request. If you think differently, you can edit that value to speed up or slow down the script's response time.

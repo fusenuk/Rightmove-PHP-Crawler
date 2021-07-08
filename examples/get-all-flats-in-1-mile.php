@@ -3,7 +3,7 @@ require('../crawler.class.php');
 
 $rightmove = new rightMoveCrawl('REGION^279', 100);
 
-$rightmove->modifySearch('propertyTypes', array('flats'));
+$rightmove->modifySearch('propertyTypes', array('flat'));
 
 $rightmove->modifySearch('radius', '1');
 

@@ -83,7 +83,7 @@ By default, along with the general array containing the details of the propertie
     'price>amount',
     'listingUpdate>listingUpdateReason',
     
-Using the `getFilteredProperties()` method you will see 4 arrays of properties where the properties are in multidimensional arrays ordered by the value of the filter attribute. An Example would be `$properties['bedrooms']['4']` would contain all properties that have 4 bedrooms. Or `$properties['propertySubtype']['flat']` would containing all properties that are 'Flats'. A final example would be `$properties['amount']['400000']` containing all properties that have a price set at £400,000.
+Using the `getFilteredProperties()` method you will see 4 arrays of properties where the properties are in multidimensional arrays ordered by the value of the filter attribute. An Example would be `$properties['bedrooms']['4']` would contain all properties that have 4 bedrooms. Or `$properties['propertySubtype']['flat']` would containing all properties that are 'Flats'. A final example would be `$properties['price>amount']['400000']` containing all properties that have a price set at £400,000.
 
 You can add extra filters to create additional multi-dimentional arrays by editing the `$this->filters` array in the class.
     
